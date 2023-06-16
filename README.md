@@ -19,7 +19,7 @@ conda env create -f environment.yml
 ```
 ### Dataset
 
-We leverage The vCLIMB Benchmark to evaluate PIVOT. For more information about the benchmark and how to set it, we encourage you to visit [The vCLIMB website](https://github.com/ojedaf/vCLIMB_Benchmark)
+We leverage The vCLIMB Benchmark to evaluate PIVOT. For more information about the benchmark and how to set it, we encourage you to visit [the vCLIMB website](https://github.com/ojedaf/vCLIMB_Benchmark).
 
 ## Citation
 
