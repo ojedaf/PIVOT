@@ -10,6 +10,17 @@ Modern machine learning pipelines are limited due to data availability, storage 
 
 ![PIVOT-model](https://github.com/ojedaf/PIVOT/blob/main/images/img_model.png)
 
+## Prerequisites
+
+It is essential to install all the dependencies and libraries needed to run the project. To this end, you need to run this line: 
+
+```
+conda env create -f environment.yml
+```
+### Dataset
+
+We leverage The vCLIMB Benchmark to evaluate PIVOT. For more information about the benchmark and how to set it, we encourage you to visit [The vCLIMB website](https://github.com/ojedaf/vCLIMB_Benchmark)
+
 ## Citation
 
 If you find this repository useful for your research, please consider citing our paper:
