@@ -1,0 +1,61 @@
+batch_size: 50                      # Batch Size
+epochs: 40                          # Num Epoch
+lr: 0.01                            # Learning Rate
+weights: [1, 0]               
+val_weights: [1, 0]
+num_workers: 4
+num_frame_to_save: 'ALL'            # Num frames per video to save into the Mem
+temperature: 0.07             
+type_loss: 'MCL'       
+num_training_phases: 3              # Num of training phases, with prompts: 3, without prompts: 1
+type_task: 'CIL'                    # Type task
+training_phase_task_selector: 3     
+use_text_template: False
+modulation_module:
+  type_mod: 'Prompt'                # Type modulation for prompting: 'Prompt', None for any modulation.
+  mod_by_instance: 'True'
+  teacher_forcing: False
+  prompt_module:
+    type_prompt: 'task'
+    length_tex_gn: 3
+    length_sp_gn: 3
+    length_tp_gn: 3
+    length_sp_task: 3
+    length_tp_task: 3
+    pre_pro_train_mode: False
+    curr_pro_train_mode: True
+text_encoder:
+  type_text_encoder: 'roberta_base'
+memory:
+  memory_size: 2000
+  path_memory: './checkpoints/baseline_{}_{}_{}_F_{}_MEM_{}_{}_TaskPromp_woKeys_Lsp_3_Ltp_3_20tasks_vFinalPaper.pkl'
+dataset:
+  name: 'activityNet'
+  path_data: 'PATH_TO_TASKS'
+  path_frames: 'PATH_TO_VIDEO_DATA'
+  is_activityNet: True
+  train_per_noise: 0
+  val_per_noise: 0
+  co_threshold: 0
+feature_encoder:
+  type: 'PromptTempClip'
+  type_clip_model: 'ViT-B/32'
+  enable_temporal_module: True
+  dim_model: 512
+  nhead: 2
+  num_layers: 3
+  modality: 'RGB'
+  num_segments: 8
+  test_crops: 1
+comet:
+  name: 'baseline_{}_{}_{}_F_{}_MEM_{}_{}_TaskPromp_woKeys_Lsp_3_Ltp_3_20tasks_vFinalPaper'
+  api_key: 'API_KEY'
+  project_name: 'PROJECT_NAME'
+  workspace: 'WORKSPACE'
+checkpoints:
+  train_mode: True
+  eval_freq: 2
+  meta_eval_freq: 2
+  print_freq: 1
+  path_model: './checkpoints/Baseline_{}_{}_{}_F_{}_MEM_{}_{}_TaskPromp_woKeys_Lsp_3_Ltp_3_20tasks_vFinalPaper.pkl'
+

@@ -1,9 +1,5 @@
 # PIVOT: Prompting for Video Continual Learning.
 
-```diff
-- The PIVOT Code will be available SOON.
-```
-
 [[Paper]](https://openaccess.thecvf.com/content/CVPR2023/papers/Villa_PIVOT_Prompting_for_Video_Continual_Learning_CVPR_2023_paper.pdf)
 
 Modern machine learning pipelines are limited due to data availability, storage quotas, privacy regulations, and expensive annotation processes. These constraints make it difficult or impossible to train and update large-scale models on such dynamic annotated sets. Continual learning directly approaches this problem, with the ultimate goal of devising methods where a deep neural network effectively learns relevant patterns for new (unseen) classes, without significantly altering its performance on previously learned ones. In this paper, we address the problem of continual learning for video data. We introduce PIVOT, a novel method that leverages extensive knowledge in pre-trained models from the image domain, thereby reducing the number of trainable parameters and the associated forgetting. Unlike previous methods, ours is the first approach that effectively uses prompting mechanisms for continual learning without any in-domain pre-training. Our experiments show that PIVOT improves state-of-the-art methods by a significant 27% on the 20-task ActivityNet setup.
@@ -20,6 +16,15 @@ conda env create -f environment.yml
 ### Dataset
 
 We leverage The vCLIMB Benchmark to evaluate PIVOT. For more information about the benchmark and how to set it, we encourage you to visit [the vCLIMB website](https://github.com/ojedaf/vCLIMB_Benchmark).
+
+### Run
+
+First of all, the configuration file must be created or modified according to the provided examples.
+Then, you must run the following line to train our main model considering your configuration file. 
+
+```
+python main.py -conf './conf/CONF_FILE_NAME.yaml'
+```
 
 ## Citation
 
